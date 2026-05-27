@@ -26,7 +26,8 @@ export default function GameCTA() {
         <h2 style={styles.headline}>Play<br />Kanekshans.</h2>
 
         <p style={styles.body}>
-          Tyler built his own Connections-style word game — and now it's about him.
+          He built his own Connections-style Belize ripoff.
+          Now it's time to beat him at his own game.
           Group the 16 words into 4 categories. Get it right, and something special unlocks.
         </p>
 
@@ -111,8 +112,7 @@ const styles = {
     fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
     fontWeight: 300,
     lineHeight: 1.7,
-    color: 'var(--text-light)',
-    opacity: 0.85,
+    color: 'rgba(255,255,255,0.75)',
     maxWidth: '480px',
   },
   clues: {
@@ -155,6 +155,6 @@ const styles = {
     fontFamily: 'var(--font-mono)',
     fontSize: '0.6rem',
     letterSpacing: '0.15em',
-    color: 'var(--text-muted)',
+    color: 'rgba(255,255,255,0.35)',
   },
 };

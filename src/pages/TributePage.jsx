@@ -9,7 +9,7 @@ export default function TributePage() {
     <main>
       <Hero />
       <SkillsScroll />
-      <CountrySilhouettes />
+      {/* <CountrySilhouettes /> */}
       <FriendQuotes />
       <GameCTA />
     </main>

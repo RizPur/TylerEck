@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 
@@ -16,40 +17,33 @@ const CATEGORIES = [
   },
   {
     id: 'peppers',
-    title: 'Hotter than a Caribbean summer',
+    title: 'Things that describe Tyler in one word',
     emoji: '🌶',
     color: '#06D6A0',
     darkColor: '#001a14',
-    items: ['SCOTCH BONNET', 'HABANERO', 'BWAI', 'CAROLINA REAPER'],
+    items: ['SHORT', 'A VIBE', 'CARIBBEAN', 'FUNNY'],
     difficulty: 2,
   },
   {
-    id: 'languages',
-    title: 'Tyler speaks…',
-    emoji: '言',
+    id: 'goals',
+    title: 'Tyler\'s life goals',
+    emoji: 'A',
     color: '#3A86FF',
     darkColor: '#00091a',
-    items: ['ENGLISH', 'MANDARIN', 'SPANISH', 'CREOLE'],
+    items: ['A WIFE', 'BIG SHOULDERS', 'FINNISH SALARY', 'A YARD IN BELIZE'],
     difficulty: 3,
   },
   {
-    id: 'achievements',
-    title: "Tyler's claim to fame",
+    id: 'Games',
+    title: "Things Tyler introduced to us",
     emoji: '⭐',
     color: '#FF006E',
     darkColor: '#1a0010',
-    items: ['MARATHON', 'GUITAR', 'KANEKSHANS', 'AMADEUS'],
+    items: ['Garticphone', 'Belizean chips cheese peas dish', 'KANEKSHANS', '"BWAI"'],
     difficulty: 4,
   },
 ];
 
-// ─── BIRTHDAY VIDEO ───────────────────────────────────────────────────────────
-// Replace VIDEO_URL with the actual YouTube video URL or hosted video file URL.
-// Example YouTube embed: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-// Example video file: '/birthday-video.mp4'
-const VIDEO_URL = ''; // ← paste video URL here
-const VIDEO_IS_YOUTUBE = VIDEO_URL.includes('youtube') || VIDEO_URL.includes('youtu.be');
-// ─────────────────────────────────────────────────────────────────────────────
 
 const MAX_GUESSES = 4;
 const CARNIVAL_COLORS = ['#FF006E', '#FFBE0B', '#3A86FF', '#FB5607', '#06D6A0'];
@@ -96,6 +90,7 @@ function launchWinConfetti() {
 }
 
 export default function KanekshansGame() {
+  const navigate = useNavigate();
   const [tiles, setTiles] = useState(buildTiles);
   const [selected, setSelected] = useState([]);
   const [solved, setSolved] = useState([]);
@@ -103,7 +98,6 @@ export default function KanekshansGame() {
   const [gameState, setGameState] = useState('playing'); // 'playing' | 'won' | 'lost'
   const [shakeRow, setShakeRow] = useState(false);
   const [message, setMessage] = useState(null);
-  const [showVideo, setShowVideo] = useState(false);
   const [oneAway, setOneAway] = useState(false);
 
   const toggleTile = useCallback(
@@ -144,7 +138,7 @@ export default function KanekshansGame() {
         setMessage('You got them all! 🎉');
         setGameState('won');
         setTimeout(launchWinConfetti, 300);
-        setTimeout(() => setShowVideo(true), 1200);
+        setTimeout(() => navigate('/win'), 1800);
       } else {
         setMessage(`✓ ${category.title}`);
         setTimeout(() => setMessage(null), 2500);
@@ -156,8 +150,7 @@ export default function KanekshansGame() {
         const next = prev - 1;
         if (next <= 0) {
           setGameState('lost');
-          setMessage("Tough one — but the video's still yours.");
-          setTimeout(() => setShowVideo(true), 1000);
+          setMessage("Tough one — Tyler would've gotten it.");
         } else {
           setMessage(isOneAway ? 'One away!' : 'Not quite…');
           setTimeout(() => {
@@ -180,7 +173,6 @@ export default function KanekshansGame() {
     setGameState('playing');
     setShakeRow(false);
     setMessage(null);
-    setShowVideo(false);
     setOneAway(false);
   }, []);
 
@@ -316,87 +308,10 @@ export default function KanekshansGame() {
         )}
       </div>
 
-      {/* Win / Lose overlay */}
-      <AnimatePresence>
-        {showVideo && (
-          <VideoReveal
-            won={gameState === 'won'}
-            onClose={() => setShowVideo(false)}
-          />
-        )}
-      </AnimatePresence>
     </div>
   );
 }
 
-function VideoReveal({ won, onClose }) {
-  return (
-    <motion.div
-      style={styles.overlay}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      onClick={onClose}
-    >
-      <motion.div
-        style={styles.overlayCard}
-        initial={{ scale: 0.85, opacity: 0, y: 40 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button style={styles.closeBtn} onClick={onClose}>✕</button>
-
-        <div style={styles.revealHeader}>
-          {won ? (
-            <>
-              <span style={styles.revealEmoji}>🎉</span>
-              <h2 style={styles.revealTitle}>You know Tyler.</h2>
-              <p style={styles.revealSub}>Happy Birthday, brother. This one's for you.</p>
-            </>
-          ) : (
-            <>
-              <span style={styles.revealEmoji}>💛</span>
-              <h2 style={styles.revealTitle}>Tyler's still Tyler.</h2>
-              <p style={styles.revealSub}>Hard to put him in a box. Here's what really matters —</p>
-            </>
-          )}
-        </div>
-
-        <div style={styles.videoWrap}>
-          {VIDEO_URL ? (
-            VIDEO_IS_YOUTUBE ? (
-              <iframe
-                src={VIDEO_URL + '?autoplay=0&rel=0'}
-                title="Birthday video for Tyler"
-                style={styles.videoFrame}
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            ) : (
-              <video
-                src={VIDEO_URL}
-                controls
-                playsInline
-                style={styles.videoElement}
-              />
-            )
-          ) : (
-            <div style={styles.videoPlaceholder}>
-              <span style={styles.playIcon}>▶</span>
-              <p style={styles.videoPlaceholderText}>
-                Birthday video goes here.<br />
-                Set <code>VIDEO_URL</code> in <code>KanekshansGame.jsx</code>
-              </p>
-            </div>
-          )}
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
 
 const styles = {
   container: {
@@ -579,108 +494,5 @@ const styles = {
     borderRadius: '2px',
     color: 'var(--dark)',
     cursor: 'pointer',
-  },
-  overlay: {
-    position: 'fixed',
-    inset: 0,
-    background: 'rgba(240,234,224,0.85)',
-    backdropFilter: 'blur(8px)',
-    zIndex: 100,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '1.5rem',
-  },
-  overlayCard: {
-    position: 'relative',
-    background: '#FFFFFF',
-    border: '1px solid rgba(10,10,15,0.08)',
-    borderRadius: '12px',
-    padding: '2.5rem',
-    width: '100%',
-    maxWidth: '600px',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.5rem',
-    boxShadow: '0 40px 100px rgba(10,10,15,0.2)',
-  },
-  closeBtn: {
-    position: 'absolute',
-    top: '1rem',
-    right: '1rem',
-    background: 'none',
-    border: 'none',
-    color: 'var(--text-muted)',
-    fontSize: '1rem',
-    cursor: 'pointer',
-    padding: '0.3rem',
-    lineHeight: 1,
-  },
-  revealHeader: {
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '0.6rem',
-  },
-  revealEmoji: {
-    fontSize: '3rem',
-  },
-  revealTitle: {
-    fontFamily: 'var(--font-display)',
-    fontSize: 'clamp(2rem, 6vw, 3rem)',
-    background: 'linear-gradient(135deg, #D4940A, #E8005F)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-    lineHeight: 1,
-  },
-  revealSub: {
-    fontFamily: 'var(--font-body)',
-    fontSize: '1rem',
-    fontWeight: 300,
-    fontStyle: 'italic',
-    color: 'var(--text-muted)',
-    lineHeight: 1.5,
-  },
-  videoWrap: {
-    position: 'relative',
-    width: '100%',
-    borderRadius: '8px',
-    overflow: 'hidden',
-    aspectRatio: '16/9',
-    background: '#F0EAE0',
-  },
-  videoFrame: {
-    width: '100%',
-    height: '100%',
-    border: 'none',
-  },
-  videoElement: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'contain',
-  },
-  videoPlaceholder: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '1rem',
-    border: '2px dashed rgba(255,190,11,0.2)',
-    borderRadius: '8px',
-  },
-  playIcon: {
-    fontSize: '3rem',
-    color: 'rgba(255,190,11,0.4)',
-  },
-  videoPlaceholderText: {
-    fontFamily: 'var(--font-mono)',
-    fontSize: '0.65rem',
-    color: 'var(--text-muted)',
-    textAlign: 'center',
-    lineHeight: 1.7,
   },
 };

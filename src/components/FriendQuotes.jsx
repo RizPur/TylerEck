@@ -8,6 +8,13 @@ import { motion, useInView } from 'framer-motion';
 // import friend1Photo from '../assets/people/friend1.jpg';
 // import friend2Photo from '../assets/people/friend2.jpg';
 import chapati from '../assets/people/chapati.png'
+import alvaro from '../assets/people/alvaro.jpeg'
+import aida2 from '../assets/people/aida.jpeg';
+import zab from '../assets/people/zab.jpeg';
+import sem from '../assets/people/sem.jpeg';
+import gym from '../assets/people/gym.jpeg';
+import cat from '../assets/people/cat.jpeg';
+import pm from '../assets/people/pm.png';
 // etc.
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -17,9 +24,9 @@ import chapati from '../assets/people/chapati.png'
 const QUOTES = [
   {
     quote:
-      'Tyler walks into a room and the temperature changes. Not the kind that burns you — the kind that makes everything feel possible.',
-    name: 'Friend 1',
-    photo: null, // ← friend1Photo
+      'I never have a dull moment with Tyler, aka my g. Most of our conversations are internet brain rot and him being passionate about everything for no reason, but lowkey he has this aura about him that forces you to be in the moment and genuinely enjoy it. Bro is even influencing me to run in his honor, and that"s saying a lot. Happy birthday, man!',
+    name: 'Aida',
+    photo: aida2, // ← friend1Photo
     accent: '#E8005F',
   },
   {
@@ -31,32 +38,47 @@ const QUOTES = [
   },
   {
     quote:
-      "He moved to Taiwan, learned Mandarin, got a degree, then came back and built a game. All while being the most fun person at every party.",
-    name: 'Friend 3',
-    photo: null,
+      "Even if I've called him a million things but 'Tyler', he's the kind of person you cannot forget. He'll be there for you both for winning a race or for losing everything at the casino -- love you bro, never change 🔥",
+    name: 'Alvaro',
+    photo: alvaro,
     accent: '#059669',
   },
   {
     quote:
-      "Family is everything to him. You can see it in the way he talks, the way he works, the way he celebrates.",
-    name: 'Friend 4',
-    photo: null,
+      "Happy birthday Tyler! You big dawg, strong as an ox and tall at heart haha. I will always remember Aida’s housewarming get-together where we had our group drawing sessions and how you guys won at air volleyball at the beach. We’ll keep these blessed gifs forever.",
+    name: 'Sem',
+    photo: sem,
     accent: '#1D6FE8',
   },
   {
     quote:
-      "Most people who can do half of what Tyler does would never let you forget it. Tyler somehow makes you feel like you're the impressive one.",
-    name: 'Friend 5',
-    photo: null,
+      "Morning bro, maanin! 😊 In this day I want to wish you joy, love and blessings.  It’s a pleasure counting you as my friend!  Thanks for your heart full of joy that you share with all of us 🥰 Happy bday Tyler, sending lots of love!! 🎂🤍  I’ll keep on waiting for our 5km run 🏃‍♀️ “God bless you and keep you, God smile on you and gift you, God look you full in the face and make you prosper.”Numbers 6: 24-26",
+    name: 'Zabdy',
+    photo: zab,
     accent: '#E84A00',
   },
   {
     quote:
-      "There is genuinely no bad day when Tyler is around. He is the antidote to everything that goes wrong.",
-    name: 'Friend 6',
-    photo: null,
+      "I was a small man before I met Tyler. Unocoordinated, unathletic, and unfunny. Tyler gave me the confidence to start running, start gym alongside him, and even lending me his jokes to use in office the next day. Since meeting him, I have become the better man I am today. I owe him everything..",  
+    name: 'Joel',
+    photo: gym,
     accent: '#7C3AED',
   },
+  {
+    quote:
+      "泰勒老兄，你是我认识的最真实、最随和的加勒比 guy，真的。每天都在想你，兄弟。 生日快乐！",
+    name: 'Shuang',
+    photo: cat, // ← no photo for this quote, so it will use a gradient fallback
+    accent: '#E8005F',
+  },
+  {
+    quote:
+      "What more can be said about this guy. Tyler has gone accross the world, representing Belize in the best way possible. He is one of the best of our people",
+    name: 'Most Honerable Johnny Briceño',
+    photo: pm,// no photo provided for this quote, so it will use a gradient fallback
+    accent: '#059669',
+  }
+
 ];
 
 // Distinct gradient fallbacks per card (used when no photo is provided)

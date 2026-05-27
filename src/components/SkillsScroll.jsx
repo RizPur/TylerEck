@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Currently wired up from src/assets/tyler/:
 import sharkie   from '../assets/tyler/sharkie.png';
 import beach     from '../assets/tyler/beach.png';
-import gym       from '../assets/tyler/gym.png';
+import gym       from '../assets/people/gym2.jpeg';
 import chinese   from '../assets/tyler/chinese.png';
 import chef from '../assets/tyler/chef.png'
 import guitar from '../assets/tyler/guitar.png'
@@ -26,9 +26,9 @@ const SKILLS = [
     label: 'Athlete',
     photo: gym,       // beach.png — swap for a running/race photo
     emoji: '🏃',
-    headline: 'Ran to the end of the world.',
+    headline: 'Usain Bolt speed, Forrest Gump endurance.',
     caption:
-      'And back. Tyler doesn\'t just sign up for marathons — he signs up for the one nicknamed "End of the World." That\'s not stubbornness, that\'s just Tyler being Tyler: finding the hardest version of something and doing it with a smile.',
+      'From marathons to the gym to the beach volleyball court, Tyler is a lifelong athlete. He trains with the dedication of a pro and the joy of someone who just really loves moving his body.',
     accent: '#E84A00',
   },
   {
@@ -36,9 +36,9 @@ const SKILLS = [
     label: 'Linguist',
     photo: chinese,     // chinese.png — swap for a Taiwan/Mandarin photo
     emoji: '言',
-    headline: 'Went to Taiwan. Learned in Mandarin.',
+    headline: 'Taiwan in this guy\'s blood.',
     caption:
-      'Most people move abroad and take English-taught programs. Tyler moved to Taiwan and got his entire Bachelor\'s degree in Mandarin Chinese. That\'s not studying a language — that\'s living inside one.',
+      'Chose education and career paths over highways and airports. Only this madman could forsee the value of learning Mandarin in the middle of a global pandemic. He\'s been studying the language for years, and even lived in Taiwan for a stretch to immerse himself fully.',
     accent: '#D4940A',
   },
   {
@@ -56,9 +56,9 @@ const SKILLS = [
     label: 'Cloud Architect',
     photo: cloud,        // drop a cloud/tech photo in src/assets/tyler/ and import it
     emoji: '☁',
-    headline: 'AWS. Azure. He speaks cloud.',
+    headline: 'AWS. Azure. GCP. He speaks cloud.',
     caption:
-      'Certified across multiple cloud platforms, Tyler has been building in the sky before it was fashionable. He also interned at Amadeus, one of the most critical tech infrastructures in global travel.',
+      'Certified across every cloud platform, Tyler has been building in the sky before the thing was even a la mode. He also interned at Amadeus, one of the most critical tech infrastructures in global travel.',
     accent: '#1D6FE8',
   },
   {
@@ -68,7 +68,7 @@ const SKILLS = [
     emoji: '🌶',
     headline: 'Scotch bonnet or nothing.',
     caption:
-      'Tyler\'s kitchen is not for the faint of tongue. Raised on Caribbean heat, he considers scotch bonnet pepper a baseline. Food, to Tyler, is culture — Jamaica in a bowl, Belize on a plate.',
+      'The man\'s kitchen is not for the weak. Raised on Caribbean heat, he considers scotch bonnet pepper a baseline. Traveling to as far as Nice to find the best exotic market ingredients, Tyler cooks with the same passion and dedication he applies to everything else in his life.',
     accent: '#E8005F',
   },
   {
@@ -78,7 +78,7 @@ const SKILLS = [
     emoji: '🦈',
     headline: 'Tamed a whole shark. Twice.',
     caption:
-      'Tyler built his own Connections-style game — Kanekshans — from scratch. Because when you love wordplay and your friends love you, you build the thing and share it. Simple as that.',
+      'The man who can\'t stop signing up for hard things once tamed a shark in the middle of a basketball court — and then tamed the same shark again 2 months later. Please stop this man.',
     accent: '#7C3AED',
   },
   {
@@ -88,7 +88,7 @@ const SKILLS = [
     emoji: '❤',
     headline: 'Family first. Full stop.',
     caption:
-      'Everything Tyler does, he does with his people in mind. The travel, the degrees, the hustle — it all traces back to the people he loves. In a world that glorifies independence, Tyler chooses roots.',
+      'Everything Tyler does, he does with his people in mind. The travel, the degrees, the hustle - it all comes back to the people he loves. In a world that glorifies the chase, the man chooses connection.',
     accent: '#D4940A',
   },
 
