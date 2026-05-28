@@ -60,14 +60,14 @@ const QUOTES = [
   },
   {
     quote:
-      "I was a small man before I met Tyler. Unocoordinated, unathletic, and unfunny. Tyler gave me the confidence to start running, start gym alongside him, and even lending me his jokes to use in office the next day. Since meeting him, I have become the better man I am today. I owe him everything..",  
+      "I was a small man before I met Tyler. Unocoordinated, unathletic, and unfunny. Tyler gave me the confidence to start running, start gym, and achieve all my dreams. Since meeting him, I have become the better man that I am today. I owe him everything..",  
     name: 'Joel',
     photo: gym,
     accent: '#7C3AED',
   },
   {
     quote:
-      "泰勒老兄，你是我认识的最真实、最随和的加勒比 guy，真的。每天都在想你，兄弟。 生日快乐！",
+      "泰勒老兄，你是我认识的最真实、最随和的加勒比 bro，真的。每天都在想你，兄弟。 生日快乐！",
     name: 'Shuang',
     photo: cat, // ← no photo for this quote, so it will use a gradient fallback
     accent: '#E8005F',
