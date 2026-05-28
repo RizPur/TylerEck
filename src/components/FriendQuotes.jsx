@@ -16,6 +16,7 @@ import gym from '../assets/people/gym.jpeg';
 import cat from '../assets/people/cat.jpeg';
 import pm from '../assets/people/pm.png';
 import slai from '../assets/tyler/slai2.png';
+import elliot from '../assets/tyler/elliot.jpeg';
 // etc.
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -74,9 +75,9 @@ const QUOTES = [
   },
   {
     quote:
-      "What more can be said about this guy. Tyler has gone accross the world, representing Belize in the best way possible. He is one of the best of our people",
-    name: 'Most Honerable Johnny Briceño',
-    photo: pm,// no photo provided for this quote, so it will use a gradient fallback
+      "Happy birthday to Eurecom’s finest. Tyler my g, always been there for me, in the good and the bad. Can’t have a bad day when you see this guy. Wish you the best",
+    name: 'Elliot',
+    photo: elliot,// no photo provided for this quote, so it will use a gradient fallback
     accent: '#059669',
   },
   {
