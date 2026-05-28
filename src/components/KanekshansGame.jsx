@@ -12,7 +12,7 @@ const CATEGORIES = [
     emoji: '🌍',
     color: '#FFBE0B',
     darkColor: '#1a1400',
-    items: ['JAMAICA', 'BELIZE', 'TAIWAN', 'FINLAND'],
+    items: ['FRANCE', 'BELIZE', 'TAIWAN', 'FINLAND'],
     difficulty: 1,
   },
   {
@@ -21,7 +21,7 @@ const CATEGORIES = [
     emoji: '🌶',
     color: '#06D6A0',
     darkColor: '#001a14',
-    items: ['SHORT', 'A VIBE', 'TALENTED', 'FUNNY'],
+    items: ['SHORT', 'A VIBE', 'FIT', 'FUNNY'],
     difficulty: 2,
   },
   {
@@ -39,7 +39,7 @@ const CATEGORIES = [
     emoji: '⭐',
     color: '#FF006E',
     darkColor: '#1a0010',
-    items: ['Garticphone', 'Belizean chips cheese peas dish', 'KANEKSHANS', '"BWAI"'],
+    items: ['GARTICPHONE', 'SCOTCH BONNET', 'KANEKSHANS', '"BWAI"'],
     difficulty: 4,
   },
 ];
