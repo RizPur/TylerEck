@@ -15,6 +15,7 @@ import sem from '../assets/people/sem.jpeg';
 import gym from '../assets/people/gym.jpeg';
 import cat from '../assets/people/cat.jpeg';
 import pm from '../assets/people/pm.png';
+import slai from '../assets/tyler/slai2.png';
 // etc.
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -77,6 +78,13 @@ const QUOTES = [
     name: 'Most Honerable Johnny Briceño',
     photo: pm,// no photo provided for this quote, so it will use a gradient fallback
     accent: '#059669',
+  },
+  {
+    quote:
+      "Tyler, you’ve always been my facilitator. You make things feel comfortable at any time, and you’re a genuinely warm and motivating person to be around. Happy birthday, bro ",
+    name: 'Arthur',
+    photo: slai,// no photo provided for this quote, so it will use a gradient fallback
+    accent: '#1D6FE8',
   }
 
 ];
