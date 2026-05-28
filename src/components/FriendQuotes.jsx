@@ -68,7 +68,7 @@ const QUOTES = [
   },
   {
     quote:
-      "泰勒老兄，你是我认识的最真实、最随和的加勒比 bro，真的。每天都在想你，兄弟。 生日快乐！",
+      "Tyler, I miss you. To be honest, you are the number one Caribbean man I've ever seen. Before I met you, I thought Caribbean men were pirates, but you showed me how decent, educated, ambitious, and funny one can be. Wherever you are, you can vibe with the whole group, always giving good energy. I'm so lucky that I met you. Hope you are having a great 27th year. (screaming and wiping my tears)",
     name: 'Shuang',
     photo: cat, // ← no photo for this quote, so it will use a gradient fallback
     accent: '#E8005F',

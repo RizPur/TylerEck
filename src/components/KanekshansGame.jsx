@@ -21,7 +21,7 @@ const CATEGORIES = [
     emoji: '🌶',
     color: '#06D6A0',
     darkColor: '#001a14',
-    items: ['SHORT', 'A VIBE', 'CARIBBEAN', 'FUNNY'],
+    items: ['SHORT', 'A VIBE', 'TALENTED', 'FUNNY'],
     difficulty: 2,
   },
   {
